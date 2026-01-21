@@ -1,0 +1,52 @@
+<h2>Playlists</h2>
+
+<input
+  type="text"
+  placeholder="New playlist name"
+  [(ngModel)]="newPlaylistName"
+/>
+<button (click)="createPlaylist()">Create</button>
+
+<div
+  class="playlist"
+  *ngFor="let playlist of playlists"
+>
+  <!-- HEADER -->
+  <div
+    class="playlist-header"
+    (click)="togglePlaylist(playlist.id)"
+  >
+    <span>{{ playlist.name }}</span>
+    <span>({{ playlist.songs.length }} songs)</span>
+  </div>
+
+  <!-- DROPDOWN BODY -->
+  <div
+    class="playlist-body"
+    *ngIf="expandedPlaylistId === playlist.id"
+  >
+    <h4>Songs in playlist</h4>
+
+    <div
+      class="song-row"
+      *ngFor="let song of playlist.songs"
+    >
+      <span>{{ song.title }} – {{ song.artist }}</span>
+      <button (click)="removeSong(playlist, song)">
+        Remove
+      </button>
+    </div>
+
+    <h4>Add songs</h4>
+
+    <div
+      class="song-row"
+      *ngFor="let song of availableSongs(playlist)"
+    >
+      <span>{{ song.title }} – {{ song.artist }}</span>
+      <button (click)="addSong(playlist, song)">
+        Add
+      </button>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,58 @@
+.brand-title {
+  text-align: center;
+  margin: 40px 0 20px;
+}
+
+:host {
+  display: block;
+  min-height: 100vh;
+  box-sizing: border-box;
+  padding-bottom: 96px; /* space below content so player doesn't overlap */
+}
+
+.brand-title h1 {
+  font-family: 'Pacifico', cursive;
+  font-size: 64px;
+  background: linear-gradient(
+    90deg,
+    #ff4e50,
+    #fc913a,
+    #f9d423,
+    #24c6dc,
+    #514a9d
+  );
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: rainbowFlow 6s linear infinite;
+}
+
+.brand-title p {
+  font-size: 20px;
+  letter-spacing: 2px;
+  color: #aaa;
+  margin-top: 10px;
+  font-style: italic;
+}
+
+@keyframes rainbowFlow {
+  0% {
+    background-position: 0%;
+  }
+  100% {
+    background-position: 200%;
+  }
+}
+
+/* Ensure the page is scrollable and hero backgrounds show full image */
+body, html {
+  height: 100%;
+}
+
+app-root {
+  display: block;
+}
+
+.main-content {
+  padding: 16px;
+}

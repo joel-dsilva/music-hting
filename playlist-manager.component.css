@@ -1,0 +1,36 @@
+.playlist {
+  margin: 16px 0;
+  border-radius: 6px;
+  overflow: hidden;
+  border: 1px solid #ccc;
+}
+
+/* Header always visible */
+.playlist-header {
+  background: #111;
+  color: #fff;
+  padding: 12px 16px;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: bold;
+}
+
+/* Dropdown body */
+.playlist-body {
+  background: #f4f4f4;
+  padding: 16px;
+  color: #000;
+}
+
+.song-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+button {
+  cursor: pointer;
+}

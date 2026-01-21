@@ -1,0 +1,32 @@
+<!-- HERO / DISCOVER SECTION -->
+<div
+  class="hero"
+  [style.backgroundImage]="'url(' + heroImages[currentHeroIndex] + ')'"
+>
+  <div class="hero-content">
+    <h1>Discover new music</h1>
+    <p>Stream tracks, explore artists, and build playlists.</p>
+
+    <input
+      type="text"
+      class="search"
+      placeholder="Search tracks or artists"
+    />
+  </div>
+</div>
+
+<h2>Tracks</h2>
+
+<div class="song-card" *ngFor="let song of songs">
+  <div class="info">
+    <h3>{{ song.title }}</h3>
+    <p>{{ song.artist }}</p>
+  </div>
+
+  <div class="controls">
+    <button (click)="playSong(song)">▶</button>
+    <button (click)="toggleFavorite(song)">
+      {{ song.isFavorite ? '♥' : '♡' }}
+    </button>
+  </div>
+</div>

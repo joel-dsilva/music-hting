@@ -1,0 +1,22 @@
+<div class="player">
+  <div class="player-info">
+    <div class="track-title">{{ currentTitle || 'No track playing' }}</div>
+    <div class="track-artist">{{ currentArtist }}</div>
+  </div>
+
+  @if (!isPlaying) {
+    <button (click)="play()">Play</button>
+  } @else {
+    <button (click)="pause()">Pause</button>
+  }
+
+  <label class="volume">
+    <input
+      type="range"
+      min="0"
+      max="100"
+      [value]="volume"
+      (input)="onVolumeChange($any($event.target).value)"
+    >
+  </label>
+</div>
